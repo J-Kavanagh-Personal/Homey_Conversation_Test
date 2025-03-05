@@ -4,6 +4,7 @@ Installation and run:
 
 - clone github
 - bundle install
+- bundle exec rails db:migrate
 - bundle exec rails s
 
 ## Task
