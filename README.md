@@ -1,5 +1,11 @@
 # Homey Conversation Test
 
+Installation and run:
+
+- clone github
+- bundle install
+- bundle exec rails s
+
 ## Task
 
 Use Ruby on Rails to build a project conversation history. A user should be able to:
