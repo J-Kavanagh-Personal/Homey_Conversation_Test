@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @conversation %>
+
+<div>
+   <%= link_to "Update status", conversation_edit_status_path(@conversation) %>
+</div>
+
+
+<div>
+  <% if !@conversation.comments.nil? %>
+    <% @conversation.comments.order("created_at DESC").each do |comment| %>
+      <%= render comment %>
+    <% end %>
+    <%= link_to "New comment", new_comment_path(conversation: @conversation.id) %>
+  <% else %>
+    <%= link_to "New comment", new_comment_path(conversation: @conversation.id) %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Back to conversations", conversations_path %>
+
+  <%= button_to "Destroy this conversation", @conversation, method: :delete %>
+</div>
